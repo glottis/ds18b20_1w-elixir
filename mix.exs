@@ -9,8 +9,16 @@ defmodule Ds18b201w.MixProject do
       start_permanent: Mix.env() == :prod,
       source_url: "https://github.com/glottis/ds18b20_1w-elixir",
       description: "simple library for reading 1wire ds18b20 sensors",
-      name: "ds18b20_1w",
+      package: package(),
       deps: deps()
+    ]
+  end
+
+  defp package() do
+    [
+      licenses: ["MIT License"],
+      links: %{"GitHub" => "https://github.com/glottis/ds18b20_1w-elixir"},
+      name: "ds18b20_1w"
     ]
   end
 
@@ -24,8 +32,7 @@ defmodule Ds18b201w.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"},
+      {:ex_doc, "~> 0.14", only: :dev, runtime: false}
     ]
   end
 end
