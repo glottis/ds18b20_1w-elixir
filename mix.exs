@@ -7,9 +7,9 @@ defmodule Ds18b201w.MixProject do
       version: "0.1.0",
       elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
-      source_url: "https://github.com/glottis/ds18b20_1w-elixir"
-      description: "simple library for reading 1wire ds18b20 sensors"
-      name: "ds18b20_1w"
+      source_url: "https://github.com/glottis/ds18b20_1w-elixir",
+      description: "simple library for reading 1wire ds18b20 sensors",
+      name: "ds18b20_1w",
       deps: deps()
     ]
   end
