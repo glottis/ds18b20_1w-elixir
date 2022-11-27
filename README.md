@@ -21,7 +21,7 @@ be found at [https://hexdocs.pm/ds18b20_1w](https://hexdocs.pm/ds18b20_1w).
 
 ## Usage 
 
-read_sensors/0 for getting readings for any connected sensors
+read_sensors/0 for getting readings from any connected sensors
 
 list_sensors/0 lists any connected sensors
 
