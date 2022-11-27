@@ -46,7 +46,7 @@ defmodule Ds18b201w do
            |> String.split("=")
            |> List.last()
            |> String.to_integer(),
-         temperature <- (raw_temp / 100) |> Float.round(1) do
+         temperature <- (raw_temp / 1000) |> Float.round(1) do
       {:ok, temperature}
     else
       _ -> {:error, :invalid_crc}
