@@ -1,4 +1,4 @@
-# Ds18b201w
+# Ds18b20_1w
 
 **This is a simple library for reading 1wire ds18b20 sensors**
 
@@ -18,4 +18,10 @@ end
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/ds18b20_1w](https://hexdocs.pm/ds18b20_1w).
+
+## Usage 
+
+read_sensors/0 for getting readings for any connected sensors
+
+list_sensors/0 lists any connected sensors
 
