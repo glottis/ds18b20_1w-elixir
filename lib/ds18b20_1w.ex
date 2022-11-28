@@ -31,12 +31,12 @@ defmodule Ds18b201w do
     sensor_id = sensor_path |> Path.split() |> List.last()
 
     case File.read(sensor_path <> "/w1_slave") do
-      {:ok, data} -> data |> parse_temperature_file()
+      {:ok, data} -> parse_temperature_file(data, sensor_id)
       {:error, error_msg} -> {:error, sensor_id, error_msg}
     end
   end
 
-  def parse_temperature_file(data) do
+  def parse_temperature_file(data, sensor_id \\ "") do
     with true <- valid_crc?(data),
          raw_temp <-
            data
@@ -47,9 +47,9 @@ defmodule Ds18b201w do
            |> List.last()
            |> String.to_integer(),
          temperature <- (raw_temp / 1000) |> Float.round(1) do
-      {:ok, temperature}
+      {:ok, sensor_id, temperature}
     else
-      _ -> {:error, :invalid_crc}
+      _ -> {:error, sensor_id, :invalid_crc}
     end
   end
 
