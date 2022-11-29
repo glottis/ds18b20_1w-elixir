@@ -1,10 +1,10 @@
-defmodule Ds18b201w.MixProject do
+defmodule Ds18b201_w.MixProject do
   use Mix.Project
 
   def project do
     [
       app: :ds18b20_1w,
-      version: "0.1.1",
+      version: "0.1.2",
       elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
       source_url: "https://github.com/glottis/ds18b20_1w-elixir",

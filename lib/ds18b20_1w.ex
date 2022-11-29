@@ -1,17 +1,17 @@
-defmodule Ds18b201w do
+defmodule Ds18b20_1w do
   @moduledoc """
-  Documentation for Ds18b201w.
+  Documentation for Ds18b20_1w.
   """
 
   @doc """
-  Lists all connected ds18b201w sensors
+  Lists all connected ds18b20 sensors
   """
   def list_sensors do
     Path.wildcard("/sys/bus/w1/devices/28-*")
   end
 
   @doc """
-  Reads all connected ds18b201w sensors
+  Reads all connected ds18b20 sensors
   """
   def read_sensors do
     list_sensors() |> Enum.map(&read_temperature_file/1)
@@ -22,7 +22,7 @@ defmodule Ds18b201w do
 
   Example:
 
-  iex> Ds18b201w.read_temperature_file("/sys/bus/w1/devices/28-01203d2f1e12")
+  iex> Ds18b20_1w.read_temperature_file("/sys/bus/w1/devices/28-01203d2f1e12")
 
   {:ok, 28-01203d2f1e12, "01 00 4b 46 7f ff 0c 10 8b : crc=8b YES\n01 00 4b 46 1f ff 0c 10 8b t=62\n"}
 
